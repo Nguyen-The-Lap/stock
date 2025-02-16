@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Crypto Tracker là ứng dụng theo dõi giá tiền điện tử theo thời gian thực" />
+    <title>Crypto Price Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <svg id="coin-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" fill="#f2b134" stroke="#e09b3d" stroke-width="5" />
+          <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="40" fill="#fff">
+            ₿
+          </text>
+        </svg>
+      </div>
+      <h1>Crypto Price Tracker</h1>
+      <button id="theme-toggle">
+        <svg viewBox="0 0 24 24" style="margin: 10px 10px;">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.65.1-1.32.16-2.02.16-3.42 0-6.44-1.73-8.2-4.37.46.71.8 1.5.98 2.34H5.9c-.24-.66-.4-1.36-.4-2.09 0-3.31 2.69-6 6-6z"/>
+        </svg>
+        <select id="theme-select">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="high-contrast">High Contrast</option>
+          <option value="solarized">Solarized</option>
+          <option value="ocean">Ocean</option>
+          <option value="forest">Forest</option>
+          <option value="cyberpunk">Cyberpunk</option>
+          <option value="pastel">Pastel</option>
+          <option value="vintage">Vintage</option>
+          <option value="monochrome">Monochrome</option>
+        </select>
+      </button>
+    </header>
+
+    <section class="controls">
+      <input type="text" id="search-input" placeholder="Search coins..." />
+      <select id="sort-select">
+        <option value="market_cap">Sort by Market Cap</option>
+        <option value="price">Sort by Price</option>
+        <option value="change">Sort by 24h Change</option>
+        <option value="name">Sort by Name</option>
+      </select>
+      <button id="refresh-btn">Refresh Prices</button>
+      <label>
+        <input type="checkbox" id="auto-refresh-checkbox" checked />
+        Auto Refresh
+      </label>
+      <label>
+        <input type="checkbox" id="favorite-filter-checkbox" />
+        Favorites Only
+      </label>
+      <span id="last-updated"></span>
+    </section>
+
+    <main>
+      <div id="loader"></div>
+      <div id="crypto-container"></div>
+    </main>
+
+    <footer>
+      <p>Data provided by CoinGecko API. Updates every 30 seconds.</p>
+    </footer>
+
+    <div id="coin-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-details"></div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js" defer></script>
+  </body>
+</html>
